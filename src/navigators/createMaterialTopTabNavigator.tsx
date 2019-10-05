@@ -42,6 +42,9 @@ type Props = NavigationViewProps &
   };
 
 class MaterialTabView extends React.PureComponent<Props> {
+    
+  position: any;
+
   _renderLazyPlaceholder = (props: { route: Route }) => {
     const { lazyPlaceholderComponent: LazyPlaceholder } = this.props;
 
@@ -84,6 +87,7 @@ class MaterialTabView extends React.PureComponent<Props> {
       <TabBarComponent
         {...tabBarOptions}
         {...props}
+        position={this.position}
         tabBarPosition={tabBarPosition}
         screenProps={screenProps}
         navigation={navigation}
@@ -139,6 +143,7 @@ class MaterialTabView extends React.PureComponent<Props> {
         swipeEnabled={swipeEnabled}
         renderTabBar={this._renderTabBar}
         renderLazyPlaceholder={this._renderLazyPlaceholder}
+        position={this.position}
       />
     );
   }
